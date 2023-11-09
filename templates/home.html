@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %} {% include 'banner.html' %}
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">Todo List</h1>
+      <div class="row" style="margin-bottom: 32px">
+        <div class="col-md-6">
+          <div style="margin-top: 100px;"> <!-- Adicionei a margem superior aqui -->
+            <p class="lead">
+              Bem-vindo ao Todo List. Esta é uma aplicação que ajuda você a manter o controle de suas tarefas diárias, prioridades e prazos. Organize sua vida de maneira eficaz!
+            </p>
+          </div>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img
+            src="/static/people.jpeg"
+            style="height: 320px; border-radius: 4px"
+          />
+        </div>
+      </div>
+      <!-- Crie um form para um todolist -->
+
+      <h2 class="text-center mt-2 mb-4">Create Card</h2>
+      {% include 'card_form.html' %}
+
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>{% for job in jobs %} {% include 'jobitem.html' %} {% endfor %}</div>
+      
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
